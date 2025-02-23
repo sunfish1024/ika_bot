@@ -356,7 +356,7 @@ async function startupCode() {
     await loadLists();
     
     try {
-        const token = (await fs.readFile('./discordToken.txt','utf8')).trim(); // HIDE THE SENSIBLE DATA >:P
+        const token = process.env.DISCORD_TOKEN;
         client.login(token);
     } catch (error) {
         console.log('Token File Not Found');
