@@ -1,5 +1,5 @@
 # Node.js v20.13.1をベースイメージとして指定
-FROM node20.13.1
+FROM node:20.13.1
 
 # コンテナ内の作業ディレクトリを設定
 WORKDIR app
