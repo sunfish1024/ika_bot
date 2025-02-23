@@ -357,10 +357,11 @@ async function startupCode() {
     
     try {
         const token = process.env.DISCORD_TOKEN;
+        if (!token) {
+            console.error('環境変数 DISCORD_TOKEN が設定されていません');
+            process.exit(-2);
+        }
         client.login(token);
-    } catch (error) {
-        console.log('Token File Not Found');
-        process.exit(-2);
     }
 
     client.on('ready', () => {
